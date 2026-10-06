@@ -1,0 +1,6 @@
+@model IEnumerable<CatalogoProdutosMVC.Models.Produto>
+<h1>Catálogo de Produtos</h1>
+<table><tr><th>Nome</th><th>Categoria</th><th>Estoque</th><th>Preço</th><th>Situação</th></tr>
+@foreach(var p in Model) {
+<tr><td>@p.Nome</td><td>@p.Categoria</td><td>@p.Estoque</td><td>R$ @p.Preco.ToString("N2")</td><td>@(p.Estoque == 0 ? "Produto esgotado" : "Disponível")</td></tr>
+}</table>

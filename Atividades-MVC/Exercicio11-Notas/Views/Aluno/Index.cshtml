@@ -1,0 +1,7 @@
+@model IEnumerable<SistemaNotasMVC.Models.Aluno>
+<h1>Sistema de Notas</h1><table><tr><th>Aluno</th><th>Curso</th><th>Média</th><th>Situação</th></tr>
+@foreach(var a in Model) {
+<tr><td>@a.Nome</td><td>@a.Curso</td><td>@a.Media.ToString("N2")</td><td>
+@(a.Media >= 6 ? "Aprovado" : a.Media >= 4 ? "Recuperação" : "Reprovado")
+</td></tr>
+}</table>

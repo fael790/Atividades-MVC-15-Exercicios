@@ -1,0 +1,3 @@
+@model IEnumerable<VeterinariaMVC.Models.Animal>
+<h1>Animais cadastrados</h1><table><tr><th>Nome</th><th>Espécie</th><th>Idade</th><th>Dono</th></tr>
+@foreach(var a in Model) { <tr><td>@a.Nome</td><td>@a.Especie</td><td>@a.Idade</td><td>@a.Dono</td></tr> }</table>

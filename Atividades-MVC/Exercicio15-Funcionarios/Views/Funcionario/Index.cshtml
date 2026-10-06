@@ -1,0 +1,6 @@
+@model IEnumerable<FuncionariosMVC.Models.Funcionario>
+<h1>Funcionários</h1><table><tr><th>Nome</th><th>Cargo</th><th>Departamento</th><th>Salário</th><th>Status</th><th>Faixa</th></tr>
+@foreach(var f in Model) {
+<tr><td>@f.Nome</td><td>@f.Cargo</td><td>@f.Departamento</td><td>R$ @f.Salario.ToString("N2")</td><td>@(f.Ativo ? "Funcionário ativo" : "Funcionário desligado")</td>
+<td>@(f.Salario < 2500 ? "Faixa 1" : f.Salario <= 5000 ? "Faixa 2" : "Faixa 3")</td></tr>
+}</table>

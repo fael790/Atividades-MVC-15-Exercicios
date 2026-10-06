@@ -1,0 +1,3 @@
+@model IEnumerable<CursosMVC.Models.Curso>
+<h1>Sistema de Cursos</h1><table><tr><th>Nome</th><th>Carga Horária</th><th>Modalidade</th><th>Vagas</th><th>Valor</th><th>Situação</th></tr>
+@foreach(var c in Model) { <tr><td>@c.Nome</td><td>@c.CargaHoraria h</td><td>@c.Modalidade</td><td>@c.Vagas</td><td>R$ @c.Valor.ToString("N2")</td><td>@(c.Vagas > 0 ? "Inscrições abertas" : "Turma lotada")</td></tr> }</table>

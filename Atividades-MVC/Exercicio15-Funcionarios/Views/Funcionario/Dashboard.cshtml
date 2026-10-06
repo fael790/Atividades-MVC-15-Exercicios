@@ -1,0 +1,10 @@
+<h1>Dashboard</h1>
+<p>Total de funcionários: <strong>@ViewBag.Total</strong></p>
+<p>Ativos: <strong>@ViewBag.Ativos</strong></p>
+<p>Inativos: <strong>@ViewBag.Inativos</strong></p>
+<p>Média salarial: <strong>R$ @ViewBag.Media.ToString("N2")</strong></p>
+<p>Maior salário: <strong>R$ @ViewBag.Maior.ToString("N2")</strong></p>
+<p>Menor salário: <strong>R$ @ViewBag.Menor.ToString("N2")</strong></p>
+<h2>Por departamento</h2><ul>
+@foreach(var d in ViewBag.Departamentos) { <li>@d.Nome: @d.Quantidade funcionário(s)</li> }
+</ul>

@@ -1,0 +1,5 @@
+@model IEnumerable<EstoqueMVC.Models.Produto>
+<h1>Sistema de Estoque</h1><table><tr><th>Nome</th><th>Categoria</th><th>Estoque</th><th>Mínimo</th><th>Preço</th><th>Status</th></tr>
+@foreach(var p in Model) {
+<tr><td>@p.Nome</td><td>@p.Categoria</td><td>@p.Estoque</td><td>@p.EstoqueMinimo</td><td>R$ @p.Preco.ToString("N2")</td><td>@(p.Estoque == 0 ? "ESGOTADO" : p.Estoque <= p.EstoqueMinimo ? "ESTOQUE BAIXO" : "ESTOQUE NORMAL")</td></tr>
+}</table>
